@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'bundler/setup'
 require 'open-uri'
 require 'base64'
@@ -69,7 +70,8 @@ plain.each_line do |line|
   end
 end
 
-output_file = File.new('gfwlist.conf', 'w+')
 domains.concat extra_domains
-domains.sort!.uniq!.each { |domain| output_file.puts('ipset=/' + domain + '/outwall') }
-output_file.close
+File.open('gfwlist.conf', 'w+') do |f|
+  f.puts '# Generate by gfwlist2ipset at ' + Time.new.inspect
+  domains.sort.uniq.each { |domain| f.puts('ipset=/' + domain + '/outwall') }
+end
