@@ -16,6 +16,9 @@ extra_domains = [
   "google.com.hk",
   "googlesyndication.com",
   "s3.amazonaws.com",
+  "s3.feedly.com",
+  "cloudfront.net",
+  "ace-cdn.atlassian.com",
 ]
 
 def get_hostname(rule)
