@@ -1,5 +1,4 @@
 GEM
-  remote: https://ruby.taobao.org/
   specs:
     public_suffix (1.5.1)
 
@@ -8,3 +7,6 @@ PLATFORMS
 
 DEPENDENCIES
   public_suffix
+
+BUNDLED WITH
+   1.10.5
