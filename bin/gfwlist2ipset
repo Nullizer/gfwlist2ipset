@@ -8,13 +8,19 @@ options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: gfwlist2ipset [options]"
 
-  opts.on('-d <DNS Server>', '--dns <DNS Server>', 'Set a DNS Server') do |value|
-    options[:dns] = value
+  options[:ipset] = 'outwall'
+  options[:output] = 'gfwlist.conf'
+
+  opts.on('', '--ipset <ipset name>', 'Specify ipset name, default: outwall') do |value|
+    options[:ipset] = value
   end
 
-  options[:output] = 'gfwlist.conf'
   opts.on('-o OUTPUT', '--output OUTPUT', 'Output file, default: gfwlist.conf') do |value|
     options[:output] = value
+  end
+
+  opts.on('-d <DNS Server>', '--dns <DNS Server>', 'Specify DNS Server') do |value|
+    options[:dns] = value
   end
 end.parse!
 
@@ -107,11 +113,11 @@ File.open(options[:output], 'w+') do |f|
   if options.has_key?(:dns)
     domains.sort.uniq.each do |domain|
       f.puts('server=/' + domain + '/' + options[:dns])
-      f.puts('ipset=/' + domain + '/outwall')
+      f.puts('ipset=/' + domain + '/' + options[:ipset])
     end
   else
     domains.sort.uniq.each do |domain|
-      f.puts('ipset=/' + domain + '/outwall')
+      f.puts('ipset=/' + domain + '/' + options[:ipset])
     end
   end
 end
