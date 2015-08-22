@@ -26,6 +26,7 @@ end.parse!
 
 gfwlist_url = 'https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt'
 extra_domains = [
+  'admob.com',
   'appledaily.com.hk',
   'bbc.com',
   'blogspot.com',
@@ -51,8 +52,9 @@ extra_domains = [
   'krxd.net',
   'chartbeat.net',
   'slack-files.com',
+  'slack-redir.net',
   'fbinfer.com',
-  'line.naver.jp'
+  'line.naver.jp',
 ]
 
 def get_hostname(rule)
