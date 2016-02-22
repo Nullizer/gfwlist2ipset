@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'gfwlist2ipset'
-  s.version     = '0.0.3'
-  s.date        = '2015-07-22'
+  s.version     = '0.0.4'
+  s.date        = '2016-02-22'
   s.summary     = "gfwlist2ipset"
   s.description = "Generate dnsmasq ipset configure file from gfwlist"
   s.authors     = ["Nullizer"]
