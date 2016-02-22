@@ -24,7 +24,7 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-gfwlist_url = 'https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt'
+gfwlist_url = 'https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt'
 extra_domains = [
   'admob.com',
   'akamaihd.net',
@@ -55,6 +55,7 @@ extra_domains = [
   'chartbeat.net',
   'slack-files.com',
   'slack-redir.net',
+  'files.slack.com',
   'fbinfer.com',
   'line.naver.jp',
   'packages.gitlab.com'

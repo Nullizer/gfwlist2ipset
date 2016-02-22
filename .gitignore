@@ -14,3 +14,4 @@
 
 gfwlist.conf
 *.gem
+vendor/
